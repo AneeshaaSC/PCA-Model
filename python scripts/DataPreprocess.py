@@ -8,8 +8,7 @@ import numpy.core.defchararray as np_f
 from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.preprocessing import MinMaxScaler, RobustScaler, \
-    StandardScaler
+from sklearn.preprocessing import MinMaxScaler, RobustScaler, StandardScaler
 
 class read_data:
 
