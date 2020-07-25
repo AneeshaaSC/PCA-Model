@@ -9,8 +9,9 @@ import collections
 
 
 def pc_component(filename):
-    d = rd.tsv_read("/Users/jananisundaresan/Desktop/ayasdi/dataset_challenge_one.tsv")
-    predictors_data, predictors, target_data, target = rd.data_transformation(d)
+    
+    data = rd.tsv_read(filename)
+    predictors_data, predictors, target_data, target = rd.data_transformation(data)
     d = rd.handle_missing_data(predictors_data)
     new_dict, dic_score, variance, components, pca_data = dim_red.pca(d, predictors)
     dic = {'{}'.format(i+1): components[0][i] for i in range(272)}
@@ -43,3 +44,5 @@ plt.axvline(39, c='red')
 plt.xticks(np.arange(1, 272, 12), rotation='vertical', fontsize=15)
 plt.grid()
 plt.show()
+
+pc_component("dataset_challenge_one.tsv")
